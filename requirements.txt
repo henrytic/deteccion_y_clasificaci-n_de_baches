@@ -1,0 +1,46 @@
+# YOLOv11 y dependencias de deep learning
+ultralytics>=8.3.0
+torch>=2.0.0
+torchvision>=0.15.0
+opencv-python>=4.8.0
+opencv-python-headless>=4.8.0
+
+# Optimización Bayesiana
+optuna>=3.5.0
+scikit-optimize>=0.9.0
+
+# Visualización y análisis
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.18.0
+pandas>=2.0.0
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Web Framework
+flask>=3.0.0
+streamlit>=1.29.0
+flask-cors>=4.0.0
+
+# Procesamiento de video y imagen
+pillow>=10.0.0
+imageio>=2.31.0
+imageio-ffmpeg>=0.4.9
+
+# Mapas de calor
+scikit-image>=0.21.0
+
+# Reportes y exportación
+reportlab>=4.0.0
+fpdf2>=2.7.0
+jinja2>=3.1.2
+
+# Jupyter
+jupyter>=1.0.0
+ipywidgets>=8.1.0
+notebook>=7.0.0
+
+# Utilidades
+pyyaml>=6.0
+tqdm>=4.66.0
+python-dotenv>=1.0.0

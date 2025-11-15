@@ -1,0 +1,18 @@
+# Dataset configuration for YOLOv11 Pothole Detection
+# Paths relative to this config file or absolute paths
+
+# Dataset paths - UPDATE THESE WITH YOUR ACTUAL PATHS
+path: ./dataset  # Root directory of the dataset
+train: train/images  # Path to training images
+val: valid/images    # Path to validation images
+
+# Classes
+nc: 1  # Number of classes (solo baches)
+names:
+  0: pothole  # Class name
+
+# Task type
+task: segment  # Segmentation task (instance segmentation with polygons)
+
+# Dataset info
+download: false  # Dataset is already downloaded

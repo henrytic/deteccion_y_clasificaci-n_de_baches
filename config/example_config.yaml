@@ -1,0 +1,79 @@
+# Ejemplo de Configuración de Entrenamiento
+# Este archivo muestra todas las opciones disponibles para entrenar YOLOv11
+
+# Modelo base
+model: yolo11x-seg.pt  # Opciones: yolo11n-seg, yolo11s-seg, yolo11m-seg, yolo11l-seg, yolo11x-seg
+
+# Dataset
+data: config/pothole_dataset.yaml
+
+# Entrenamiento
+epochs: 300                    # Número de epochs
+patience: 50                   # Early stopping patience
+batch: 24                      # Batch size (ajustar según VRAM)
+imgsz: 896                     # Tamaño de imagen (640, 768, 896, 1024, 1280)
+
+# Dispositivo
+device: 0                      # GPU ID (0, 1, 2...) o 'cpu'
+workers: 8                     # Número de workers para dataloader
+
+# Optimizador
+optimizer: AdamW               # Opciones: SGD, Adam, AdamW, RMSProp
+lr0: 0.001                     # Learning rate inicial
+lrf: 0.01                      # Learning rate final (lr0 * lrf)
+momentum: 0.937                # Momentum (solo para SGD)
+weight_decay: 0.0005           # Weight decay
+
+# Scheduler
+warmup_epochs: 3.0             # Epochs de warmup
+warmup_momentum: 0.8           # Momentum inicial en warmup
+warmup_bias_lr: 0.1            # Learning rate de bias en warmup
+
+# Data Augmentation
+hsv_h: 0.015                   # Augmentation de Hue
+hsv_s: 0.7                     # Augmentation de Saturation
+hsv_v: 0.4                     # Augmentation de Value
+degrees: 0.0                   # Rotación de imagen (grados)
+translate: 0.1                 # Traslación de imagen (fracción)
+scale: 0.5                     # Escala de imagen (ganancia)
+shear: 0.0                     # Shear de imagen (grados)
+perspective: 0.0               # Perspectiva de imagen
+flipud: 0.0                    # Flip vertical (probabilidad)
+fliplr: 0.5                    # Flip horizontal (probabilidad)
+mosaic: 1.0                    # Mosaic augmentation (probabilidad)
+mixup: 0.0                     # Mixup augmentation (probabilidad)
+copy_paste: 0.0                # Copy-paste augmentation (probabilidad)
+
+# Loss
+box: 7.5                       # Box loss gain
+cls: 0.5                       # Class loss gain
+dfl: 1.5                       # Distribution Focal Loss gain
+
+# Validación
+val: True                      # Validar durante entrenamiento
+plots: True                    # Guardar plots
+save: True                     # Guardar checkpoints
+save_period: 10                # Guardar checkpoint cada N epochs (-1 = solo best)
+
+# Otras opciones
+pretrained: True               # Usar pesos pre-entrenados
+verbose: True                  # Modo verbose
+seed: 0                        # Semilla aleatoria
+deterministic: True            # Modo determinístico
+single_cls: True               # Tratar como single class
+rect: False                    # Rectangular training
+cos_lr: False                  # Cosine learning rate scheduler
+close_mosaic: 10               # Desactivar mosaic en últimos N epochs
+amp: True                      # Automatic Mixed Precision
+fraction: 1.0                  # Fracción del dataset a usar
+profile: False                 # Perfilado de velocidad
+overlap_mask: True             # Permitir overlap en máscaras durante entrenamiento
+mask_ratio: 4                  # Ratio de downsampling para máscaras
+dropout: 0.0                   # Dropout rate
+val_split: 0.0                 # Validación split (0 = usar val/ existente)
+
+# Proyecto
+project: models/training       # Directorio del proyecto
+name: yolo11x_pothole         # Nombre del experimento
+exist_ok: True                 # Permitir sobrescribir
+resume: False                  # Continuar desde checkpoint
