@@ -1,0 +1,104 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Dataset (puede ser muy grande)
+dataset/
+data/
+
+# Modelos entrenados (muy grandes)
+models/
+*.pt
+*.pth
+*.onnx
+*.torchscript
+*.engine
+runs/
+
+# Outputs
+output/
+outputs/
+results/
+temp/
+tmp/
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Videos (pueden ser grandes)
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Imágenes temporales
+*.jpg
+*.jpeg
+*.png
+!docs/*.png
+!docs/*.jpg
+
+# Reportes temporales
+*.pdf
+!docs/*.pdf
+
+# Optuna
+optuna_storage/
+*.db-journal
+
+# Cache
+.cache/
+*.cache
